@@ -5,32 +5,36 @@
 using namespace std;
 
 // Constructor in Amy namespace
-Amy::Grade()
-{
-    letter = '\0';
-}
 
-Amy::Grade(char l)
+namespace Amy
 {
-    bool valid = l == 'A' || l == 'B' || l == 'C' || l == 'D' || l == 'F';
-    if (valid)
+    Grade::Grade()
     {
-        letter = l;
-        ValidMessage();
+        letter = '\0';
     }
-    else
+
+    Grade::Grade(char l)
     {
-        *this = Grade();
-        InvalidMessage();
+        bool valid = l == 'A' || l == 'B' || l == 'C' || l == 'D' || l == 'F';
+        if (valid)
+        {
+            letter = l;
+            ValidMessage();
+        }
+        else
+        {
+            *this = Grade();
+            InvalidMessage();
+        }
     }
-}
 
-void Amy::ValidMessage(void) const
-{
-    cout << "Valid Grade" << endl;
-}
+    void Grade::ValidMessage(void) const
+    {
+        cout << "Valid Grade" << endl;
+    }
 
-void Amy::InvalidMessage(void) const
-{
-    cout << "Grade is not valid" << endl;
+    void Grade::InvalidMessage(void) const
+    {
+        cout << "Grade is not valid" << endl;
+    }
 }
