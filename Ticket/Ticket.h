@@ -9,8 +9,8 @@ namespace Amy
             int price;
             char seat[2];
         public:
-        Ticket(void)
-        Ticket(int pr, const char* se)
-        void DisplayInfo(void)
+        Ticket(void);
+        Ticket(int pr, const char* se);
+        void DisplayInfo(void) const;
    };
 }
