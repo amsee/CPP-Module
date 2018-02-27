@@ -4,7 +4,6 @@ using namespace std;
 
 int main(void)
 {
-    Ticket *movie;
     Ticket t(100, "A");
     t.DisplayInfo();
     cout << "display ticket info" << endl;
